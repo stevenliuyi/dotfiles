@@ -1,8 +1,8 @@
 " ----------------------------------------
 " general
 " ----------------------------------------
-set history=100
 set nocompatible
+set history=100
 set autoread                    " auto read when file is changed outside
 filetype plugin on              " enable filetype plugins
 filetype indent on
@@ -91,6 +91,9 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/python_match.vim'
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 filetype plugin indent on
