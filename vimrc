@@ -95,6 +95,11 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/python_match.vim'
 Plugin 'ervandew/supertab'
 
+" color schemes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Pychimp/vim-sol'
+Plugin 'Pychimp/vim-luna'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -126,19 +131,31 @@ if !exists(":DiffOrig")
 endif
 
 " ----------------------------------------
+" color scheme
+" ----------------------------------------
+set background=light
+colorscheme sol
+
+" ----------------------------------------
 " mappings
 " ----------------------------------------
 " switch colon and semicolon
 nnoremap ; :
 nnoremap : ;
 
+" background toggle
+map <F10> ;call ToggleBackground()<CR>
+
 " ----------------------------------------
 " functions
 " ----------------------------------------
-" returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
+" background toggle
+function! ToggleBackground()
+    if (&background == 'light')
+        set background=dark
+        colorscheme luna
+    else
+        set background=light
+        colorscheme sol
+    endif
 endfunction
