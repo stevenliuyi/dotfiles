@@ -90,6 +90,7 @@ Plugin 'vim-scripts/VimIM'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on
