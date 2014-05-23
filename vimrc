@@ -94,6 +94,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/python_match.vim'
 Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/taglist.vim'
 
 " color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -124,6 +125,14 @@ imap <leader>b <ESC>viwSsWa
 " easymotion
 let g:EasyMotion_leader_key='f'
 
+" taglist
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Show_One_File = 1	                    " only show tags for current file
+let Tlist_Use_Right_Window = 1	                " show Taglist window on the right
+let Tlist_Exit_OnlyWindow = 1	                " quit when Taglist is the last window
+
+nnoremap <leader>t :TlistToggle<CR>
+
 " difference between the current buffer and the file it was loaded from
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
@@ -135,6 +144,9 @@ endif
 " ----------------------------------------
 set background=light
 colorscheme sol
+
+" change transparency
+map <F9> ;call IncreaseTransparency()<CR>
 
 " ----------------------------------------
 " mappings
@@ -158,4 +170,7 @@ function! ToggleBackground()
         set background=light
         colorscheme sol
     endif
+endfunction
+
+function! IncreaseTransparency()
 endfunction
