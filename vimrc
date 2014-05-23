@@ -67,10 +67,10 @@ if has("mac") || has("macunix")
 endif
 
 " insert mode navigation
-imap <C-h> <Left>
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-l> <Right>
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 " window navigation
 nnoremap <C-h> <C-w>h
@@ -152,7 +152,7 @@ set background=light
 colorscheme sol
 
 " change transparency
-map <F9> ;call IncreaseTransparency()<CR>
+noremap <F9> :call IncreaseTransparency()<CR>
 
 " ----------------------------------------
 " mappings
@@ -162,7 +162,7 @@ nnoremap ; :
 nnoremap : ;
 
 " background toggle
-map <F10> ;call ToggleBackground()<CR>
+noremap <F10> :call ToggleBackground()<CR>
 
 " ----------------------------------------
 " functions
