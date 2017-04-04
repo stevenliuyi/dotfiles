@@ -101,6 +101,10 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/python_match.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/taglist.vim'
+Plugin 'chikamichi/mediawiki.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
 
 " color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -129,7 +133,9 @@ nmap <leader>b viwSsW
 imap <leader>b <ESC>viwSsWa
 
 " easymotion
-let g:EasyMotion_leader_key='f'
+map f <Plug>(easymotion-prefix)
+map fw <Plug>(easymotion-bd-w)
+map fl <Plug>(easymotion-bd-jk)
 
 " taglist
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
@@ -144,6 +150,13 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
                   \ | wincmd p | diffthis
 endif
+
+" indent guides
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
+" delimitmate
+let g:delimitMate_expand_cr=1
 
 " ----------------------------------------
 " color scheme

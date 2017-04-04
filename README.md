@@ -17,7 +17,14 @@ $ ln -fs ~/.vim/vimrc ~/.vimrc
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-* Install plugins:
+* Install plugins.
 ```
 $ vim +PluginInstall +qall
 ```
+
+* Compile [YouCompleteMe](https://github.com/Valloric/YouCompleteMe).
+```
+$ cd ~/.vim/bundle/YouCompleteMe
+$ ./install.py --clang-completer
+```
+
