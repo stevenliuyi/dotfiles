@@ -16,5 +16,8 @@ function is_ubuntu() {
 ln -sfv "$DOTFILES/shell/.bash_profile" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
 
+# install oh-my-zsh
+./install/zsh.sh
+
 # install conda
 ./install/conda.sh
