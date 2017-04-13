@@ -10,6 +10,7 @@ let mapleader= ","              " <leader> key
 let g:mapleader = ","           " <leader> key
 let maplocalleader = ","        " <localleader> key
 set encoding=utf8
+syntax on
 
 " ----------------------------------------
 " user interface
