@@ -17,8 +17,18 @@ ln -sfv "$DOTFILES/shell/.bash_profile" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
 ln -sfv "$DOTFILES/shell/.zshrc" ~
 
+# for ubuntu
+if is_ubuntu; then
+    source ./install/ubuntu.sh
+fi
+
+# for mac os
+if us_macos; then
+    source ./install/macos_brew.sh
+fi
+
 # install oh-my-zsh
-./install/zsh.sh
+source ./install/zsh.sh
 
 # install conda
-./install/conda.sh
+source ./install/conda.sh

@@ -4,7 +4,7 @@
 sudo apt-get update
 
 # install packages
-packages = "awscli build-essential curl python-pip"
+packages="awscli build-essential curl python-pip zsh"
 
 for pkg in $packages; do
     # check if the package is already installed
