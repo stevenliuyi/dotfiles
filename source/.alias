@@ -1,5 +1,6 @@
 # basic shortcuts
 alias ll="ls -l"
+alias la="ls -a"
 alias ..="cd .."
 alias ...="cd ../.."
 alias df="df -H"

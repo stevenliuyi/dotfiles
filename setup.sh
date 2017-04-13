@@ -15,6 +15,7 @@ function is_ubuntu() {
 # symlinks
 ln -sfv "$DOTFILES/shell/.bash_profile" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
+ln -sfv "$DOTFILES/shell/.zshrc" ~
 
 # install oh-my-zsh
 ./install/zsh.sh
