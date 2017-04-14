@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # update apt
+print_info "updating apt..."
 sudo apt-get update
 
 # install packages
@@ -9,12 +10,12 @@ packages="awscli build-essential cmake curl python-pip zsh"
 for pkg in $packages; do
     # check if the package is already installed
     if dpkg --get-selections | grep -q "^$pkg[[:space:]]*install$" >/dev/null; then
-        echo "$pkg is already installed"
+        print_info "$pkg is already installed"
     else
         if sudo apt-get -qq install $pkg; then
-            echo "$pkg is successfully installed"
+            print_info "$pkg is successfully installed"
         else
-            echo "error installing $pkg"
+            print_info "error installing $pkg"
         fi
     fi
 done

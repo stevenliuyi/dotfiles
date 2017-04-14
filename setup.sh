@@ -34,6 +34,11 @@ function print_question() {
     printf "\e[0;33m  [?] $1\e[0m"
 }
 
+function print_info() {
+    # print output in purple
+    printf "\n\e[0;35m $1\e[0m\n\n"
+}
+
 # install chosen packages
 function install() {
     if ! $install_all; then
@@ -53,10 +58,11 @@ function install() {
 ln -sfv "$DOTFILES/shell/.bash_profile" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
 ln -sfv "$DOTFILES/shell/.zshrc" ~
+print_info "symlinks are created"
 
 ask_for_confirmation "do you want to continue to install some tools?"
 if answer_is_yes; then
-    ask_for_confirmation "do you want to install all tools available or choose specific ones to install?"
+    ask_for_confirmation "do you want to install all tools available (otherwise you need to choose specific ones to install)?"
     if answer_is_yes; then
         install_all=true
     else
