@@ -9,5 +9,5 @@ fi
 brew update
 brew upgrade
 
-apps=(awscli ffmpeg git wget)
+apps=(awscli cmake ffmpeg git wget)
 brew install "${apps[@]}"

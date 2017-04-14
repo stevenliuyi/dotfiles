@@ -14,7 +14,9 @@ if test ! $(which conda); then
     # install
     bash "Anaconda3-4.3.1.sh" -b
 
+    # clear up
     cd $DOTFILES
+    rm -rf downloads
 fi
 
 # upgrade

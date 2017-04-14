@@ -27,6 +27,9 @@ if us_macos; then
     source ./install/macos_brew.sh
 fi
 
+# install vim
+source ./install/vim.sh
+
 # install oh-my-zsh
 source ./install/zsh.sh
 
