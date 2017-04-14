@@ -25,5 +25,7 @@ if test $(which tmux); then
     else
         print_info "installing Tmux Plugin Manager..."
         git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+        print_info "installing Tmux plugins"
+        ~/.tmux/plugins/tpm/bin/install_plugins
     fi
 fi
