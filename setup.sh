@@ -90,3 +90,8 @@ install "vim plugins" "./install/vim.sh"
 
 # install oh-my-zsh
 install "oh-my-zsh" "./install/zsh.sh"
+
+# install gpu driver for ubuntu
+if is_ubuntu; then
+    install "CUDA and cuDNN on ubuntu" "./install/ubuntu_gpu.sh"
+fi

@@ -31,6 +31,7 @@ conda upgrade -y --all
 conda config --add channels conda-forge
 
 # install packages
+conda install -y bcolz
 conda install tensorflow
 
 # check if the environment exists
