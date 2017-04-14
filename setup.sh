@@ -26,17 +26,17 @@ function answer_is_yes() {
 function ask_for_confirmation() {
     print_question "$1 (y/n) "
     read -n 1
-    printf "\n"
+    printf "\n\n"
 }
 
 function print_question() {
     # print output in yellow
-    printf "\e[0;33m  [?] $1\e[0m"
+    printf "\e[0;33m  [DOTFILES] $1\e[0m"
 }
 
 function print_info() {
     # print output in purple
-    printf "\n\e[0;35m $1\e[0m\n\n"
+    printf "\n\e[0;35m  [DOTFILES] $1\e[0m\n\n"
 }
 
 # install chosen packages
@@ -56,10 +56,12 @@ function install() {
 
 # symlinks
 ln -sfv "$DOTFILES/shell/.bash_profile" ~
-ln -sfv "$DOTFILES/vim/.vimrc" ~
 ln -sfv "$DOTFILES/shell/.zshrc" ~
+ln -sfv "$DOTFILES/vim/.vimrc" ~
+ln -sfv "$DOTFILES/tmux/.tmux.conf" ~
 print_info "symlinks are created"
 
+# tool installation
 ask_for_confirmation "do you want to continue to install some tools?"
 if answer_is_yes; then
     ask_for_confirmation "do you want to install all tools available (otherwise you need to choose specific ones to install)?"
@@ -71,19 +73,22 @@ if answer_is_yes; then
 else
     exit
 fi
-    
-# for ubuntu
+
+# install packages for ubuntu
 if is_ubuntu; then
     install "packages using apt" " ./install/ubuntu.sh"
 fi
 
-# for mac os
+# install packages for mac os
 if is_macos; then
     install "packages using Homebrew" "./install/macos_brew.sh"
 fi
-
+    
 # install conda
 install "Anaconda" "./install/conda.sh"
+
+# install packages using pip and other sources (for both ubuntu and macos)
+install "packages using PyPI and other sources" "./install/packages.sh"
 
 # install vim plugins
 install "vim plugins" "./install/vim.sh"

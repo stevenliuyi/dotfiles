@@ -73,11 +73,11 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
-" window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" window navigation (managed by vim-tmux-navigator now)
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 " ----------------------------------------
 " plugin manager
@@ -106,6 +106,7 @@ Plugin 'chikamichi/mediawiki.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " color schemes
 Plugin 'altercation/vim-colors-solarized'
