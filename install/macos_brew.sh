@@ -15,5 +15,5 @@ brew upgrade
 
 # install
 print_info "installing packages through Homebrew..."
-apps=(awscli cmake ffmpeg git wget)
+apps=(awscli cmake ffmpeg git p7zip wget)
 brew install "${apps[@]}"

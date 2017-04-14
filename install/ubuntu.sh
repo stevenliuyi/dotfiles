@@ -5,7 +5,7 @@ print_info "updating apt..."
 sudo apt-get update
 
 # install packages
-packages="awscli build-essential cmake curl python-pip zsh"
+packages="awscli build-essential cmake curl p7zip p7zip-rar python-pip zsh"
 
 for pkg in $packages; do
     # check if the package is already installed
