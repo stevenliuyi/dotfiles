@@ -27,6 +27,12 @@ fi
 print_info "upgrading Anaconda..."
 conda upgrade -y --all
 
+# add conda-forge to channels
+conda config --add channels conda-forge
+
+# install packages
+conda install tensorflow
+
 # check if the environment exists
 ENV=$(head -n 1 $DOTFILES/install/conda_environment.yml | cut -f2 -d ' ')
 source activate $ENV
