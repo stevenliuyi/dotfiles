@@ -63,6 +63,10 @@ ln -sfv "$DOTFILES/shell/.bash_profile" ~
 ln -sfv "$DOTFILES/shell/.zshrc" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
 ln -sfv "$DOTFILES/tmux/.tmux.conf" ~
+
+mkdir -p $HOME/.ssh
+ln -sfv "$DOTFILES/conf/ssh.config" ~/.ssh/config
+
 print_info "symlinks are created"
 
 # tool installation

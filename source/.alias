@@ -8,9 +8,6 @@ alias df="df -H"
 # vim
 alias vi="vim"
 
-# ssh
-alias crc="ssh yliu27@crcfe02.crc.nd.edu"
-
 # g++
 alias g++="g++ -Wall -g -O2"
 
