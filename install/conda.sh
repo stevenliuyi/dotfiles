@@ -19,6 +19,11 @@ if test ! $(which conda); then
     # clear up
     cd $DOTFILES
     rm -rf downloads
+
+    if [ -d "$HOME/anaconda3/bin" ]; then
+        # add to path so command conda can be found
+        export PATH=$HOME/anaconda3/bin:$PATH
+    fi
 else
     print_info "Anaconda is already installed"
 fi

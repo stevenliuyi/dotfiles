@@ -36,14 +36,15 @@ echo '{
 }' > ~/.keras/keras.json
 
 # install cudnn libraries
-# wget "http://platform.ai/files/cudnn.tgz" -O "cudnn.tgz"
-# tar -zxf cudnn.tgz
-# cd cuda
-# sudo cp lib64/* /usr/local/cuda/lib64/
-# sudo cp include/* /usr/local/cuda/include/
-ML_REPO_PKG=http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb
-wget "$ML_REPO_PKG" -O ml-repo.deb
-sudo dpkg -i ml-repo.deb && rm -f ml-repo.deb
+wget "http://platform.ai/files/cudnn.tgz" -O "cudnn.tgz"
+tar -zxf cudnn.tgz
+cd cuda
+sudo cp lib64/* /usr/local/cuda/lib64/
+sudo cp include/* /usr/local/cuda/include/
 
-sudo apt-get update
-sudo apt-get install libcudnn
+# alternative way to install cudnn from official resource but take more spaces
+# ML_REPO_PKG=http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64/nvidia-machine-learning-repo-ubuntu1604_1.0.0-1_amd64.deb
+# wget "$ML_REPO_PKG" -O ml-repo.deb
+# sudo dpkg -i ml-repo.deb && rm -f ml-repo.deb
+# sudo apt-get update
+# sudo apt-get install digits # including cudnn

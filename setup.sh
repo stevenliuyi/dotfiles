@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# dotfile directory
-export DOTFILES=~/.dotfiles
-
 ##################################################
 # utils
 ##################################################
@@ -53,6 +50,13 @@ function install() {
 ##################################################
 # main
 ##################################################
+
+# dotfile directory
+if [ ! -d "$HOME/.dotfiles" ]; then
+    print_info "cannot find dotfiles directory, please make sure it's at ~/.dotfiles "
+    exit
+fi
+export DOTFILES=~/.dotfiles
 
 # symlinks
 ln -sfv "$DOTFILES/shell/.bash_profile" ~
