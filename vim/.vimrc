@@ -97,6 +97,7 @@ Plugin 'vim-scripts/VimIM'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'vim-latex/vim-latex'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/python_match.vim'
@@ -144,6 +145,23 @@ let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 let Tlist_Show_One_File = 1	                    " only show tags for current file
 let Tlist_Use_Right_Window = 1	                " show Taglist window on the right
 let Tlist_Exit_OnlyWindow = 1	                " quit when Taglist is the last window
+
+" vim-latex
+" IMPORTANT: win32 users will need to have 'shellslash' set so that latex
+" can be called correctly.
+" set shellslash
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+let g:Tex_DefaultTargetFormat = 'pdf'
 
 nnoremap <leader>t :TlistToggle<CR>
 

@@ -15,5 +15,9 @@ brew upgrade
 
 # install
 print_info "installing packages through Homebrew..."
-apps=(awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget)
+apps=(awscli brew-cask cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget)
 brew install "${apps[@]}"
+
+print_info "installing apps through Homebrew Cask..."
+cask_apps=(mactex)
+brew cask install "${cask_apps[@]}"
