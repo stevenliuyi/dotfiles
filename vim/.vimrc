@@ -162,6 +162,10 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_TreatMacViewerAsUNIX = 1
+let g:Tex_ExecuteUNIXViewerInForeground = 1
+let g:Tex_ViewRule_pdf = 'open -a Preview'
+let g:Tex_CompileRule_pdf = 'pdflatex $*'
 
 nnoremap <leader>t :TlistToggle<CR>
 
