@@ -60,12 +60,15 @@ export DOTFILES=~/.dotfiles
 
 # symlinks
 ln -sfv "$DOTFILES/shell/.bash_profile" ~
+ln -sfv "$DOTFILES/shell/.bashrc" ~
 ln -sfv "$DOTFILES/shell/.zshrc" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
 ln -sfv "$DOTFILES/tmux/.tmux.conf" ~
 
 mkdir -p $HOME/.ssh
 ln -sfv "$DOTFILES/conf/ssh.config" ~/.ssh/config
+
+source ~/.bash_profile
 
 print_info "symlinks are created"
 
