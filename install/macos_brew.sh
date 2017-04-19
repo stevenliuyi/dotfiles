@@ -14,10 +14,12 @@ brew update
 brew upgrade
 
 # install
+brew tap homebrew/science
+
 print_info "installing packages through Homebrew..."
-apps=(autojump awscli brew-cask cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget)
+apps=(autojump awscli brew-cask cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R)
 brew install "${apps[@]}"
 
 print_info "installing apps through Homebrew Cask..."
-cask_apps=(mactex)
+cask_apps=(mactex rstudio)
 brew cask install "${cask_apps[@]}"
