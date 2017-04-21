@@ -40,12 +40,22 @@ conda install -y bcolz
 conda install tensorflow
 
 # check if the environment exists
-ENV=$(head -n 1 $DOTFILES/install/conda_environment.yml | cut -f2 -d ' ')
+ENV=$(head -n 1 $DOTFILES/conda/py3.yml | cut -f2 -d ' ')
 source activate $ENV
 if [ $? -eq 0 ]; then
     print_info "environment $ENV already exists"
 else
     # create environment from file
     print_info "environment $ENV does not exists, starting creating..."
-    conda env create -f $DOTFILES/install/conda_environment.yml
+    conda env create -f $DOTFILES/conda/py3.yml
+fi
+
+ENV=$(head -n 1 $DOTFILES/conda/py2.yml | cut -f2 -d ' ')
+source activate $ENV
+if [ $? -eq 0 ]; then
+    print_info "environment $ENV already exists"
+else
+    # create environment from file
+    print_info "environment $ENV does not exists, starting creating..."
+    conda env create -f $DOTFILES/conda/py2.yml
 fi
