@@ -12,6 +12,15 @@ let maplocalleader = ","        " <localleader> key
 set encoding=utf8
 syntax on
 
+" detect os
+if !exists("g:os")
+    if has("win32") || has("win64")
+        let g:os = "Windows"
+    else
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+
 " ----------------------------------------
 " user interface
 " ----------------------------------------
@@ -165,8 +174,13 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_TreatMacViewerAsUNIX = 1
 let g:Tex_ExecuteUNIXViewerInForeground = 1
-let g:Tex_ViewRule_pdf = 'open -a Preview'
 let g:Tex_CompileRule_pdf = 'pdflatex $*'
+
+if g:os == "Darwin"
+    let g:Tex_ViewRule_pdf = 'open -a Preview'
+elseif g:os == "Linux"
+    let g:Tex_ViewRule_pdf = 'xdg-open'
+endif
 
 nnoremap <leader>t :TlistToggle<CR>
 
