@@ -12,6 +12,12 @@ fi
 print_info "installing vim plugins..."
 vim +PluginInstall +qall
 
+# vimim symlink
+if [ -d "$HOME/.vim/bundle/VimIM/plugin" ]; then
+    print_info "wubi98 for VimIM added"
+    ln -svf "$DOTFILES/vim/vimim.wubi98.txt" "$HOME/.vim/bundle/VimIM/plugin/"
+fi
+
 # compile YouCompleteMe
 if [ -d "$HOME/.vim/bundle/YouCompleteMe" ]; then
     print_info "compiling YouCompleteMe..."
