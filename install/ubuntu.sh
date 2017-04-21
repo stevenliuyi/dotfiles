@@ -5,7 +5,7 @@ print_info "updating apt..."
 sudo apt-get update
 
 # install packages
-packages="awscli binutils build-essential cmake curl gcc g++ make software-properties-common texlive tmux p7zip p7zip-rar python-pip zsh vim autojump google-chrome-stable r-base r-base-dev gdebi-core"
+packages="awscli binutils build-essential cmake curl gcc g++ make software-properties-common texlive tmux p7zip p7zip-rar python-pip zsh vim autojump google-chrome-stable r-base r-base-dev gdebi-core nautilus-dropbox"
 
 for pkg in $packages; do
     # check if the package is already installed
