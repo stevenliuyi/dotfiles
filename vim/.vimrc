@@ -108,6 +108,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'terryma/vim-multiple-cursors'
 
 " color schemes
 Plugin 'altercation/vim-colors-solarized'

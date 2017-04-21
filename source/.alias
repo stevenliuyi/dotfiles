@@ -9,7 +9,7 @@ alias df="df -H"
 alias vi="vim"
 
 # g++
-alias g++="g++ -Wall -g -O2"
+alias g++="g++ -std=c++14 -Wall -g -O2"
 
 # tmux
 alias tmux="tmux -2"
