@@ -1,0 +1,11 @@
+# default.custom.yaml
+# save it to: 
+#   ~/.config/ibus/rime  (linux)
+#   ~/Library/Rime       (macos)
+#   %APPDATA%\Rime       (windows)
+
+patch:
+  schema_list:
+    - schema: wubi98  # 五笔98
+    - schema: luna_pinyin   # 朙月拼音
+    - schema: pinyin_simp   # 袖珍簡化字拼音，拼音反查五笔以及混合輸入用

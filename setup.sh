@@ -90,6 +90,11 @@ if is_ubuntu; then
     install "packages using apt" " ./install/ubuntu.sh"
 fi
 
+# install packages for ubuntu desktop
+if is_ubuntu; then
+    install "packages for Ubuntu desktop environment" "./install/ubuntu_desktop.sh"
+fi
+
 # install packages for mac os
 if is_macos; then
     install "packages using Homebrew" "./install/macos_brew.sh"
