@@ -1,9 +1,12 @@
 # check if pip is alredy installed
+packages="powerline-status floyd-cli"
 if test ! $(which pip); then
     print_info "pip doesn't exist"
 else
     print_info "installing packages through pip..."
-    pip install powerline-status
+    for pkg in $packages; do
+        pip install $pkg
+    done
 fi
 
 # powerline fonts
