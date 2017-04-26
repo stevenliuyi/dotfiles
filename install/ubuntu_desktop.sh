@@ -35,6 +35,9 @@ for pkg in $packages; do
     fi
 done
 
+# get rid of internal errors
+sudo apt-get purge --auto-remove apport
+
 # setup rime
 if [ -d "$HOME/.config/ibus/rime" ]; then
     ln -sfv "$DOTFILES/conf/rime.default.custom.yaml" "$HOME/.config/ibus/rime/default.custom.yaml"
