@@ -5,7 +5,7 @@ print_info "updating apt..."
 sudo apt-get update
 
 # install packages
-packages="google-chrome-stable gdebi-core nautilus-dropbox fcitx-googlepinyin numix-gtk-theme numix-icon-theme-circle ibus-rime librime-data-pinyin-simp gksu"
+packages="google-chrome-stable gdebi-core nautilus-dropbox fcitx-googlepinyin numix-gtk-theme numix-icon-theme-circle ibus-rime librime-data-pinyin-simp gksu inkscape"
 
 for pkg in $packages; do
     # check if the package is already installed
