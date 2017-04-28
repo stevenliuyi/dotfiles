@@ -1,0 +1,15 @@
+os:
+    - linux
+    - osx
+
+dist: trusty
+
+sudo: required
+
+script:
+    - git clone https://github.com/stevenliuyi/dotfiles ~/.dotfiles
+    - cd ~/.dotfiles
+    - ./setup.sh -a
+
+notifications:
+    email: false
