@@ -59,6 +59,33 @@ function install() {
 # main
 ##################################################
 
+while getopts ":ah" opt; do
+    case $opt in
+        a )
+            install_all=true
+            ;;
+        h )
+            echo "DOTFILES - Yi Liu
+https://github.com/stevenliuyi/dotfiles
+
+Usage: ./setup.sh [options]
+
+Options:
+-a      Install all tools available
+-h      Show help information
+"
+
+            exit
+            ;;
+        \? )
+            print_info "Invalid option encountered"
+            exit
+            ;;
+        : )
+            ;;
+    esac
+done
+
 # dotfile directory
 if [ ! -d "$HOME/.dotfiles" ]; then
     print_info "cannot find dotfiles directory, please make sure it's at ~/.dotfiles "
@@ -81,16 +108,20 @@ source ~/.bash_profile
 print_info "symlinks are created"
 
 # tool installation
-ask_for_confirmation "do you want to continue to install some tools?"
-if answer_is_yes; then
-    ask_for_confirmation "do you want to install all tools available (otherwise you need to choose specific ones to install)?"
-    if answer_is_yes; then
-        install_all=true
-    else
-        install_all=false
-    fi
+if [ $install_all ]; then
+    print_info "all tools available will be installed"
 else
-    exit
+    ask_for_confirmation "do you want to continue to install some tools?"
+    if answer_is_yes; then
+        ask_for_confirmation "do you want to install all tools available (otherwise you need to choose specific ones to install)?"
+        if answer_is_yes; then
+            install_all=true
+        else
+            install_all=false
+        fi
+    else
+        exit
+    fi
 fi
 
 # install packages for ubuntu
