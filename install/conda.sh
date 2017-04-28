@@ -37,7 +37,7 @@ conda config --add channels conda-forge
 
 # install packages
 conda install -y bcolz
-conda install tensorflow
+conda install -y tensorflow
 
 # check if the environment exists
 ENV=$(head -n 1 $DOTFILES/conda/py3.yml | cut -f2 -d ' ')

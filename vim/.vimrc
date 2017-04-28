@@ -201,7 +201,7 @@ let g:delimitMate_expand_cr=1
 " color scheme
 " ----------------------------------------
 set background=light
-colorscheme sol
+silent! colorscheme sol
 
 " change transparency
 noremap <F9> :call IncreaseTransparency()<CR>

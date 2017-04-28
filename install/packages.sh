@@ -45,7 +45,7 @@ if is_ubuntu; then
     if test ! $(which rstudio); then
         print_info "installing RStudio..."
         wget https://download1.rstudio.org/rstudio-1.0.143-amd64.deb
-        sudo gdebi rstudio-1.0.143-amd64.deb
+        sudo gdebi --non-interactive rstudio-1.0.143-amd64.deb
         rm rstudio-1.0.143-amd64.deb # clean up
     else
         print_info "RStudio is already installed"

@@ -14,7 +14,7 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     fi
     # set zsh to be the default shell
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-        chsh -s $(which zsh)
+        sudo chsh $USER -s $(which zsh)
         print_info "set oh-my-zsh to be the default shell"
     else
         print_info "oh-my-zsh is already the default shell"
