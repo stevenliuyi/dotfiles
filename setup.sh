@@ -13,6 +13,10 @@ function is_ubuntu() {
     [[ "$(cat /etc/issue 2> /dev/null)" =~ Ubuntu ]] || return 1
 }
 
+function is_ubuntu_desktop() {
+    [[ ! "$XDG_CURRENT_DESKTOP" == "" ]] || return 1
+}
+
 # interface
 function answer_is_yes() {
   [[ "$REPLY" =~ ^[Yy]$ ]] \
@@ -91,8 +95,10 @@ if is_ubuntu; then
 fi
 
 # install packages for ubuntu desktop
-if is_ubuntu; then
-    install "packages for Ubuntu desktop environment" "./install/ubuntu_desktop.sh"
+if is_ubuntu ; then
+    if is_ubuntu_desktop; then
+        install "packages for Ubuntu desktop environment" "./install/ubuntu_desktop.sh"
+    fi
 fi
 
 # install packages for mac os
