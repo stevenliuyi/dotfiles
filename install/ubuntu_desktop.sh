@@ -44,3 +44,6 @@ if [ -d "$HOME/.config/ibus/rime" ]; then
     ln -sfv "$DOTFILES/conf/rime.wubi98.dict.yaml" "$HOME/.config/ibus/rime/wubi98.dict.yaml"
     ln -sfv "$DOTFILES/conf/rime.wubi98.schema.yaml" "$HOME/.config/ibus/rime/wubi98.schema.yaml"
 fi
+
+# install fonts
+source $HOME/.dotfiles/install/ubuntu_fonts.sh
