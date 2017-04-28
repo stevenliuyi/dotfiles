@@ -17,6 +17,10 @@ function is_ubuntu_desktop() {
     [[ ! "$XDG_CURRENT_DESKTOP" == "" ]] || return 1
 }
 
+function is_nvidia() {
+    $(lspci | grep -q "NVIDIA") || return 1
+}
+
 # interface
 function answer_is_yes() {
   [[ "$REPLY" =~ ^[Yy]$ ]] \
@@ -120,5 +124,7 @@ install "oh-my-zsh" "./install/zsh.sh"
 
 # install gpu driver for ubuntu
 if is_ubuntu; then
-    install "CUDA and cuDNN on ubuntu" "./install/ubuntu_gpu.sh"
+    if is_nvidia; then
+        install "CUDA and cuDNN on ubuntu" "./install/ubuntu_gpu.sh"
+    fi
 fi
