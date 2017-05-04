@@ -107,6 +107,9 @@ source ~/.bash_profile
 
 print_info "symlinks are created"
 
+# copy instead of creating symlink since password is store in the file
+cp $DOTFILES/conf/.pypirc ~
+
 # tool installation
 if [ $install_all ]; then
     print_info "all tools available will be installed"
