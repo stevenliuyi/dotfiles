@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check if Hombrew exist, install if not
-if test ! $(which brew); then
+if test ! "$(which brew)"; then
     print_info "Homebrew doesn't exist, start downloading and installing..." 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
@@ -17,7 +17,7 @@ brew upgrade
 brew tap homebrew/science
 
 print_info "installing packages through Homebrew..."
-apps=(autojump awscli brew-cask cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar)
+apps=(autojump awscli brew-cask cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck)
 brew install "${apps[@]}"
 
 print_info "installing apps through Homebrew Cask..."

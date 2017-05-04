@@ -18,7 +18,7 @@ function is_ubuntu_desktop() {
 }
 
 function is_nvidia() {
-    $(lspci | grep -q "NVIDIA") || return 1
+    lspci | grep -q "NVIDIA" || return 1
 }
 
 # interface
@@ -36,12 +36,12 @@ function ask_for_confirmation() {
 
 function print_question() {
     # print output in yellow
-    printf "\e[0;33m  [DOTFILES] $1\e[0m"
+    printf "\e[0;33m  [DOTFILES] %s\e[0m" "$1"
 }
 
 function print_info() {
     # print output in purple
-    printf "\n\e[0;35m  [DOTFILES] $1\e[0m\n\n"
+    printf "\n\e[0;35m  [DOTFILES] %s\e[0m\n\n" "$1"
 }
 
 # install chosen packages
@@ -50,7 +50,7 @@ function install() {
         ask_for_confirmation "do you want to install $1?"
     fi
     if answer_is_yes || $install_all; then
-        source $2
+        source "$2"
     fi
     
 }
@@ -100,7 +100,7 @@ ln -sfv "$DOTFILES/shell/.zshrc" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
 ln -sfv "$DOTFILES/tmux/.tmux.conf" ~
 
-mkdir -p $HOME/.ssh
+mkdir -p "$HOME/.ssh"
 ln -sfv "$DOTFILES/conf/ssh.config" ~/.ssh/config
 
 source ~/.bash_profile
@@ -129,7 +129,7 @@ fi
 
 # install packages for ubuntu
 if is_ubuntu; then
-    install "packages using apt" " ./install/ubuntu.sh"
+    install "packages using apt" "./install/ubuntu.sh"
 fi
 
 # install packages for ubuntu desktop

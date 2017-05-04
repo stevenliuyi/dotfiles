@@ -1,11 +1,13 @@
+#!/bin/bash
+
 # check if pip is alredy installed
 packages="powerline-status floyd-cli"
-if test ! $(which pip); then
+if test ! "$(which pip)"; then
     print_info "pip doesn't exist"
 else
     print_info "installing packages through pip..."
     for pkg in $packages; do
-        pip install $pkg
+        pip install "$pkg"
     done
 fi
 
@@ -28,7 +30,7 @@ fi
 
 # tmux plugin manager
 # check if tmux is installed
-if test $(which tmux); then
+if test "$(which tmux)"; then
     if [ -d "$HOME/.tmux/plugins/tpm" ]; then
         print_info "Tmux Plugin Manager is already installed"
     else
@@ -42,7 +44,7 @@ fi
 # rstudio
 if is_ubuntu; then
     # check if rstudio is installed
-    if test ! $(which rstudio); then
+    if test ! "$(which rstudio)"; then
         print_info "installing RStudio..."
         wget https://download1.rstudio.org/rstudio-1.0.143-amd64.deb
         sudo gdebi --non-interactive rstudio-1.0.143-amd64.deb

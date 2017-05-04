@@ -15,19 +15,19 @@ for pkg in $packages; do
         # setup repositories
 
         # numix theme
-        if [ $pkg == "numix-gtk-theme" ]; then
+        if [ "$pkg" == "numix-gtk-theme" ]; then
             sudo add-apt-repository ppa:numix/ppa
             sudo apt-get update
         fi 
 
         # google chrome
-        if [ $pkg == "google-chrome-stable" ]; then
+        if [ "$pkg" == "google-chrome-stable" ]; then
             wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
             sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
             sudo apt-get update
         fi
 
-        if sudo apt-get -qq install $pkg; then
+        if sudo apt-get -qq install "$pkg"; then
             print_info "$pkg is successfully installed"
         else
             print_info "error installing $pkg"
@@ -46,4 +46,4 @@ if [ -d "$HOME/.config/ibus/rime" ]; then
 fi
 
 # install fonts
-source $HOME/.dotfiles/install/ubuntu_fonts.sh
+source "$HOME/.dotfiles/install/ubuntu_fonts.sh"

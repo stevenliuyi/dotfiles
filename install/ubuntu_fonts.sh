@@ -21,7 +21,7 @@ else
     
     # install Noto fonts for all users
     sudo mkdir -p /usr/share/fonts/opentype/noto
-    sudo cp *ttc /usr/share/fonts/opentype/noto
+    sudo cp ./*ttc /usr/share/fonts/opentype/noto
     sudo chmod a+r /usr/share/fonts/opentype/noto/*.ttc
     sudo fc-cache -f -v
     

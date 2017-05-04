@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script is designed to work with ubuntu 16.04 LTS
 
 # ensure system is updated and has basic build tools

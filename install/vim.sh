@@ -21,7 +21,7 @@ fi
 # compile YouCompleteMe
 if [ -d "$HOME/.vim/bundle/YouCompleteMe" ]; then
     print_info "compiling YouCompleteMe..."
-    $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
+    "$HOME/.vim/bundle/YouCompleteMe/install.py" --clang-completer
     # YCM_CORES=1 ./install.py --clang-completer # for limited memory
 else
     print_info "YouCompleteMe doesn't exist"

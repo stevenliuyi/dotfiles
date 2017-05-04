@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check if anaconda exists, install if not
-if test ! $(which conda); then
+if test ! "$(which conda)"; then
     mkdir -p downloads
     cd downloads
     # download anaconda installer based on os
@@ -17,7 +17,7 @@ if test ! $(which conda); then
     bash "Anaconda3-4.3.1.sh" -b
 
     # clear up
-    cd $DOTFILES
+    cd "$DOTFILES"
     rm -rf downloads
 
     if [ -d "$HOME/anaconda3/bin" ]; then
@@ -38,26 +38,26 @@ conda config --add channels conda-forge
 # install packages
 packages="bcolz tensorflow twine"
 for package in $packages; do
-    conda install -y $package
+    conda install -y "$package"
 done
 
 # check if the environment exists
-ENV=$(head -n 1 $DOTFILES/conda/py3.yml | cut -f2 -d ' ')
-source activate $ENV
+ENV=$(head -n 1 "$DOTFILES/conda/py3.yml" | cut -f2 -d ' ')
+source activate "$ENV"
 if [ $? -eq 0 ]; then
     print_info "environment $ENV already exists"
 else
     # create environment from file
     print_info "environment $ENV does not exists, starting creating..."
-    conda env create -f $DOTFILES/conda/py3.yml
+    conda env create -f "$DOTFILES/conda/py3.yml"
 fi
 
-ENV=$(head -n 1 $DOTFILES/conda/py2.yml | cut -f2 -d ' ')
-source activate $ENV
+ENV=$(head -n 1 "$DOTFILES/conda/py2.yml" | cut -f2 -d ' ')
+source activate "$ENV"
 if [ $? -eq 0 ]; then
     print_info "environment $ENV already exists"
 else
     # create environment from file
     print_info "environment $ENV does not exists, starting creating..."
-    conda env create -f $DOTFILES/conda/py2.yml
+    conda env create -f "$DOTFILES/conda/py2.yml"
 fi
