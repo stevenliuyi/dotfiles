@@ -1,0 +1,13 @@
+# improved cat
+cat() {
+    if command -v pygmentize > /dev/null; then
+        pygmentize $1 > /dev/null 2>&1
+        if [ $? -eq 0 ]; then
+            pygmentize $1
+        else
+            command cat $1
+        fi
+    else
+        command cat $1
+    fi
+}

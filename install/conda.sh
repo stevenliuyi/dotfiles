@@ -36,7 +36,7 @@ conda upgrade -y --all
 conda config --add channels conda-forge
 
 # install packages
-packages="bcolz tensorflow twine"
+packages="bcolz tensorflow twine yapf pygments"
 for package in $packages; do
     conda install -y "$package"
 done
