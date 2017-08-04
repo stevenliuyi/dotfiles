@@ -11,5 +11,5 @@ fi
 # install npm packages
 packages="create-react-app prop-types escape-string-regexp sort-by react-router-dom form-serialize"
 for package in $packages; do
-    npm install -g "$packages"
+    npm install -g "$package"
 done
