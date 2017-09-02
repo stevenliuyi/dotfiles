@@ -9,7 +9,7 @@ else
 fi
 
 # install npm packages
-packages="create-react-app prop-types escape-string-regexp sort-by react-router-dom form-serialize"
+packages="create-react-app"
 for package in $packages; do
     npm install -g "$package"
 done
