@@ -9,7 +9,7 @@ else
 fi
 
 # install npm packages
-packages="create-react-app"
+packages="create-react-app n heroku-cli"
 for package in $packages; do
     npm install -g "$package"
 done
