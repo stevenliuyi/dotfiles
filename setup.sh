@@ -147,8 +147,8 @@ fi
 # install conda
 install "Anaconda" "./install/conda.sh"
 
-# install npm
-install "npm packages" "./install/npm.sh"
+# install yarn
+install "yarn packages" "./install/yarn.sh"
 
 # install packages using pip and other sources (for both ubuntu and macos)
 install "packages using PyPI and other sources" "./install/packages.sh"
