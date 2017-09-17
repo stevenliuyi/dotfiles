@@ -53,3 +53,20 @@ if is_ubuntu; then
         print_info "RStudio is already installed"
     fi
 fi
+
+# watchman
+if is_ubuntu; then
+    # check if watchman is installed
+    if test ! "$(which watchman)"; then
+        print_info "installing watchman..."
+        git clone https://github.com/facebook/watchman.git
+        cd watchman
+        git checkout v4.9.0 # the latest stable release
+        ./autogen.sh
+        ./configure
+        make
+        sudo make install
+    else
+        print_info "wathman is already installed"
+    fi
+fi

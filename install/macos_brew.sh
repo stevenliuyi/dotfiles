@@ -17,7 +17,7 @@ brew upgrade
 brew tap homebrew/science
 
 print_info "installing packages through Homebrew..."
-apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck htop trash the_silver_searcher node mpich yarn)
+apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck htop trash the_silver_searcher node mpich yarn watchman)
 brew install "${apps[@]}"
 
 print_info "installing apps through Homebrew Cask..."
