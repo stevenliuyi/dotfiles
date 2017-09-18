@@ -71,3 +71,22 @@ if is_ubuntu; then
         print_info "wathman is already installed"
     fi
 fi
+
+# genymotion
+if is_ubuntu; then
+    # check if genymotion is installed
+    if [ ! -d "~/genymotion" ]; then
+        # check if virtualbox is installed
+        if test "$(which virtualbox)"; then
+            print_info "installing genymotion"
+            wget https://dl.genymotion.com/releases/genymotion-2.10.0/genymotion-2.10.0-linux_x64.bin
+            chmod +x genymotion-2.10.0-linux_x64.bin
+            ./genymotion-2.10.0-linux_x64.bin -d ~
+            rm genymotion-2.10.0-linux_x64.bin # clean-up
+        else
+            print_info "virtualbox isn't installed"
+        fi
+    else
+        print_info "genymotion is already installed"
+    fi
+fi
