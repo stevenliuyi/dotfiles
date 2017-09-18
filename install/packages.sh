@@ -61,11 +61,12 @@ if is_ubuntu; then
         print_info "installing watchman..."
         git clone https://github.com/facebook/watchman.git
         cd watchman
-        git checkout v4.9.0 # the latest stable release
+        git checkout v4.7.0 # the latest stable release
         ./autogen.sh
         ./configure
         make
         sudo make install
+        cd .. && rm -rf watchman # clean-up
     else
         print_info "wathman is already installed"
     fi

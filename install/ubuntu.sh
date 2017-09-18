@@ -5,7 +5,7 @@ print_info "updating apt..."
 sudo apt-get update
 
 # install packages
-packages="awscli binutils build-essential cmake curl gcc g++ make software-properties-common texlive texlive-generic-extra texlive-latex-extra tmux p7zip p7zip-rar python-pip zsh vim autojump r-base r-base-dev gdebi-core unrar shellcheck htop trash-cli silversearcher-ag nodejs mpich yarn oracle-java8-installer android-sdk"
+packages="awscli binutils build-essential cmake curl gcc g++ make software-properties-common texlive texlive-generic-extra texlive-latex-extra tmux p7zip p7zip-rar python-pip zsh vim autojump r-base r-base-dev gdebi-core unrar shellcheck htop trash-cli silversearcher-ag nodejs mpich yarn oracle-java8-set-default android-sdk"
 
 for pkg in $packages; do
     # check if the package is already installed
@@ -22,8 +22,15 @@ for pkg in $packages; do
             sudo apt-get update
         fi
 
+        # yarn
+        if [ "$pkg" == "yarn" ]; then
+            curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+            echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+            sudo apt-get update
+        fi
+
         # JDK
-        if [ "$pkg" == "orcale-java8-installer"]; then
+        if [ "$pkg" == "oracle-java8-set-default" ]; then
             sudo add-apt-repository ppa:webupd8team/java
             sudo apt-get update
         fi
