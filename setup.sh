@@ -46,11 +46,19 @@ function print_info() {
 
 # install chosen packages
 function install() {
-    if ! $install_all; then
-        ask_for_confirmation "do you want to install $1?"
-    fi
-    if answer_is_yes || $install_all; then
+    if [[ "$install" == "all" ]]; then
         source "$2"
+    elif [[ "$install" == "basic" && "$1" == "packages using apt" ]]; then
+        source "$2"
+    elif [[ "$install" == "basic" && "$1" == "packages using Homebrew" ]]; then
+        source "$2"
+    elif [[ "$install" == "basic" ]]; then
+        :
+    else
+        ask_for_confirmation "do you want to install $1?"
+        if answer_is_yes; then
+            source "$2"
+        fi
     fi
     
 }
@@ -59,10 +67,13 @@ function install() {
 # main
 ##################################################
 
-while getopts ":ah" opt; do
+while getopts ":abh" opt; do
     case $opt in
         a )
-            install_all=true
+            install="all"
+            ;;
+        b )
+            install="basic"
             ;;
         h )
             echo "DOTFILES - Yi Liu
@@ -72,6 +83,7 @@ Usage: ./setup.sh [options]
 
 Options:
 -a      Install all tools available
+-b      Install packages via apt (Ubuntu) or Homebrew (macOS)
 -h      Show help information
 "
 
@@ -111,16 +123,22 @@ print_info "symlinks are created"
 cp $DOTFILES/conf/.pypirc ~
 
 # tool installation
-if [ $install_all ]; then
+if [ "$install" == "all" ]; then
     print_info "all tools available will be installed"
+elif [ "$install" == "basic" ]; then
+    if is_ubuntu; then
+        print_info "packages will be installed via apt"
+    fi
+    
+    if is_macos; then
+        print_info "packages will be installed via Homebrew"
+    fi
 else
     ask_for_confirmation "do you want to continue to install some tools?"
     if answer_is_yes; then
         ask_for_confirmation "do you want to install all tools available (otherwise you need to choose specific ones to install)?"
         if answer_is_yes; then
-            install_all=true
-        else
-            install_all=false
+            install="all"
         fi
     else
         exit
