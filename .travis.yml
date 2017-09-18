@@ -9,7 +9,7 @@ sudo: required
 script:
     - git clone https://github.com/stevenliuyi/dotfiles ~/.dotfiles
     - cd ~/.dotfiles
-    - travis_wait 60 ./setup.sh -a
+    - travis_wait 60 ./setup.sh -b
 
 notifications:
     email: false
