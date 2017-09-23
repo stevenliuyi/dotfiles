@@ -1,0 +1,19 @@
+# basic shortcuts
+alias ls "ls --color"
+alias ll "ls -l --color"
+alias la "ls -a --color"
+alias .. "cd .."
+alias ... "cd ../.."
+alias df "df -H"
+
+# vim
+alias vi "vim"
+
+# g++
+alias g++ "g++ -std c++14 -Wall -g -O2"
+
+# tmux
+alias tmux "tmux -2"
+
+# trash
+alias rm trash

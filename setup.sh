@@ -109,6 +109,7 @@ export DOTFILES=~/.dotfiles
 ln -sfv "$DOTFILES/shell/.bash_profile" ~
 ln -sfv "$DOTFILES/shell/.bashrc" ~
 ln -sfv "$DOTFILES/shell/.zshrc" ~
+ln -sfv "$DOTFILES/shell/.cshrc" ~
 ln -sfv "$DOTFILES/vim/.vimrc" ~
 ln -sfv "$DOTFILES/tmux/.tmux.conf" ~
 
