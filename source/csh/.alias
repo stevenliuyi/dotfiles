@@ -16,4 +16,6 @@ alias g++ "g++ -std c++14 -Wall -g -O2"
 alias tmux "tmux -2"
 
 # trash
-alias rm trash
+if !( `where trash` == "" ) then
+    alias rm trash
+endif
