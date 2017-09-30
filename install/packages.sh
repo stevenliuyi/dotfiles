@@ -30,7 +30,7 @@ fi
 
 # tmux plugin manager
 # check if tmux is installed
-if test "$(which tmux)"; then
+if which tmux > /dev/null; then
     if [ -d "$HOME/.tmux/plugins/tpm" ]; then
         print_info "Tmux Plugin Manager is already installed"
     else
