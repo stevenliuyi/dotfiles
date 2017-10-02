@@ -19,3 +19,10 @@ alias tmux "tmux -2"
 if !( `where trash` == "" ) then
     alias rm trash
 endif
+
+# mpi
+alias mpi4 "mpirun -np 4"
+alias mpi8 "mpirun -np 8"
+alias mpi16 "mpirun -np 16"
+alias mpi32 "mpirun -np 32"
+alias mpi64 "mpirun -np 64"
