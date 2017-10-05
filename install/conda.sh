@@ -7,14 +7,14 @@ if test ! "$(which conda)"; then
     # download anaconda installer based on os
     print_info "downloading Anaconda..."
     if is_macos; then
-        wget "https://repo.continuum.io/archive/Anaconda3-4.3.1-MacOSX-x86_64.sh" -O "Anaconda3-4.3.1.sh"
+        wget "https://repo.continuum.io/archive/Anaconda3-5.0.0-MacOSX-x86_64.sh" -O "Anaconda3-5.0.0.sh"
     fi
     if is_ubuntu; then
-        wget "https://repo.continuum.io/archive/Anaconda3-4.3.1-Linux-x86_64.sh" -O "Anaconda3-4.3.1.sh"
+        wget "https://repo.continuum.io/archive/Anaconda3-5.0.0.1-Linux-x86_64.sh" -O "Anaconda3-5.0.0.sh"
     fi
     # install
     print_info "installing Anaconda..."
-    bash "Anaconda3-4.3.1.sh" -b
+    bash "Anaconda3-5.0.0.sh" -b
 
     # clear up
     cd "$DOTFILES"
