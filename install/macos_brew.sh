@@ -23,3 +23,7 @@ brew install "${apps[@]}"
 print_info "installing apps through Homebrew Cask..."
 cask_apps=(iterm2 caffeine google-chrome mactex rstudio macvim java android-sdk virtualbox genymotion)
 brew cask install "${cask_apps[@]}"
+
+# clean up
+brew cleanup
+brew cask cleanup
