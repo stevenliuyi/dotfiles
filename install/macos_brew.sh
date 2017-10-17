@@ -21,5 +21,5 @@ apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar
 brew install "${apps[@]}"
 
 print_info "installing apps through Homebrew Cask..."
-cask_apps=(mactex rstudio macvim java andriod-sdk virtualbox genymotion)
+cask_apps=(mactex rstudio macvim java android-sdk virtualbox genymotion)
 brew cask install "${cask_apps[@]}"
