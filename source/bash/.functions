@@ -11,3 +11,20 @@ cat() {
         command cat $1
     fi
 }
+
+ssh() {
+    case $* in
+        # Kerberized ssh for HPCMP
+        thunder ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@thunder.afrl.hpc.mil ;;
+        lightning ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@lightning.afrl.hpc.mil ;;
+        excalibur ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@excalibur.arl.hpc.mil ;;
+        gold ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@gold.erdc.hpc.mil ;;
+        onyx ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@onyx.erdc.hpc.mil ;;
+        topaz ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@topaz.erdc.hpc.mil ;;
+        conrad ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@conrad.navydsrc.hpc.mil ;;
+        gordon ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@gordon.navydsrc.hpc.mil ;;
+        newton ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp yliu27@newton.navo.hpc.mil ;;
+        # normal ssh
+        * ) command /usr/bin/ssh "$@" ;;
+    esac
+}
