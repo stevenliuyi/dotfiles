@@ -27,3 +27,7 @@ if which mpirun > /dev/null; then
     alias mpi32="mpirun -np 32"
     alias mpi64="mpirun -np 64"
 fi
+
+if which kinit > /dev/null; then
+    alias kinit="kinit yliu27@HPCMP.HPC.MIL"
+fi

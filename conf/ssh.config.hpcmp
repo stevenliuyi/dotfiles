@@ -28,9 +28,34 @@ Host *
     UMask                       037
     NoneEnabled                 yes
     TcpRcvBufPoll               yes
+    User yliu27
 ###
 ### End Of HPCMP Settings
 ###
+
+Host thunder
+    HostName thunder.afrl.hpc.mil
+
+Host excalibur
+    HostName excalibur.arl.hpc.mil
+
+Host gold
+    HostName gold.erdc.hpc.mil
+
+Host onyx
+    HostName onyx.erdc.hpc.mil
+
+Host topaz
+    HostName topaz.erdc.hpc.mil
+
+Host conrad
+    HostName conrad.navydsrc.hpc.mil
+
+Host gordon
+    HostName gordon.navydsrc.hpc.mil
+
+Host newton
+    HostName newton.navo.hpc.mil
 
 # Site-wide defaults for some commonly used options.  For a comprehensive
 # list of available options, their meanings and defaults, please see the
