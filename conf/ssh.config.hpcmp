@@ -36,8 +36,17 @@ Host *
 Host thunder
     HostName thunder.afrl.hpc.mil
 
+Host lightning
+    HostName lightning.afrl.hpc.mil
+
+Host abutil
+    HostName us.arl.hpc.mil
+
 Host excalibur
     HostName excalibur.arl.hpc.mil
+
+Host wputil
+    HostName us.afrl.hpc.mil
 
 Host gold
     HostName gold.erdc.hpc.mil
@@ -48,6 +57,9 @@ Host onyx
 Host topaz
     HostName topaz.erdc.hpc.mil
 
+Host viutil
+    HostName us.erdc.hpc.mil
+
 Host conrad
     HostName conrad.navydsrc.hpc.mil
 
@@ -56,6 +68,9 @@ Host gordon
 
 Host newton
     HostName newton.navo.hpc.mil
+
+Host stutil
+    HostName us.navo.hpc.mil
 
 # Site-wide defaults for some commonly used options.  For a comprehensive
 # list of available options, their meanings and defaults, please see the
