@@ -15,7 +15,7 @@ cat() {
 ssh() {
     case $* in
         # Kerberized ssh for HPCMP
-        thunder|lightning|excalibur|gold|onyx|topaz|conrad|gordon|newton ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp "$@" ;;
+        *thunder*|*lightning*|*excalibur*|*gold*|*onyx*|*topaz*|*conrad*|*gordon*|*newton* ) command /usr/local/ossh/bin/ssh -F $DOTFILES/conf/ssh.config.hpcmp "$@" ;;
         # normal ssh
         * ) command /usr/bin/ssh "$@" ;;
     esac
@@ -24,7 +24,7 @@ ssh() {
 scp() {
     case $* in
         # Kerberized ssh for HPCMP
-        thunder|lightning|excalibur|gold|onyx|topaz|conrad|gordon|newton ) command /usr/local/ossh/bin/scp -F $DOTFILES/conf/ssh.config.hpcmp "$@" ;;
+        *thunder*|*lightning*|*excalibur*|*gold*|*onyx*|*topaz*|*conrad*|*gordon*|*newton* ) command /usr/local/ossh/bin/scp -F $DOTFILES/conf/ssh.config.hpcmp "$@" ;;
         # normal ssh
         * ) command /usr/bin/scp "$@" ;;
     esac

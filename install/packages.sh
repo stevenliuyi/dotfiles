@@ -90,3 +90,40 @@ if is_ubuntu; then
         print_info "genymotion is already installed"
     fi
 fi
+
+# Kerberos & OpenSSH for HPCMP
+if is_macos; then
+    krb_package_name="HPCMP_RELEASE_20171101_client-10.9-macOS.tar.gz"
+    krb_url="https://centers.hpc.mil/users/software/kerberos/mac/${krb_package_name}"
+elif is_ubuntu; then
+    krb_package_name="HPCMP_RELEASE_20171101_client-3.10.0-693.2.2.el7.x86_64-Linux-64.tar.gz"
+    krb_url="https://centers.hpc.mil/users/software/kerberos/linux/${krb_package_name}"
+fi
+
+if [ -d "/usr/local/krb5" ]; then
+    print_info "Kerberos is already installed"
+else
+    print_info "installing Kerberos..."
+    wget --no-check-certificate "${krb_url}"
+    tar xzvf "${krb_package_name}"
+    sudo mv ./krb5 /usr/local
+    rm ${krb_package_name} # clean up
+fi
+
+if is_macos; then
+    ossh_package_name="user-openssh-7.5p1b-x86_64-apple-darwin14.5.0.tar.gz"
+    ossh_url="https://centers.hpc.mil/users/software/ssh/mac/${ossh_package_name}"
+elif is_ubuntu; then
+    ossh_package_name="user-openssh-7.5p1b-x86_64-unknown-linux-gnu.tgz"
+    ossh_url="https://centers.hpc.mil/users/software/ssh/linux/${ossh_package_name}"
+fi
+
+if [ -d "/usr/local/ossh" ]; then
+    print_info "Kerberized OpenSSH is already installed"
+else
+    print_info "installing Kerberized OpenSSH..."
+    wget --no-check-certificate "${ossh_url}"
+    tar xzvf "${ossh_package_name}"
+    sudo mv ./ossh /usr/local
+    rm ${ossh_package_name} # clean up
+fi
