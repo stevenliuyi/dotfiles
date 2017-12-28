@@ -9,7 +9,7 @@ else
 fi
 
 # install yarn packages
-packages="create-react-app n heroku-cli create-react-native-app"
+packages="create-react-app n heroku-cli create-react-native-app eslint"
 for package in $packages; do
     yarn global add "$package"
 done
