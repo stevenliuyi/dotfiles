@@ -5,7 +5,7 @@ print_info "updating apt..."
 sudo apt-get update
 
 # install packages
-packages="awscli binutils build-essential cmake curl gcc g++ make software-properties-common texlive texlive-generic-extra texlive-latex-extra tmux p7zip p7zip-rar python-pip zsh vim autojump r-base r-base-dev gdebi-core unrar shellcheck htop trash-cli silversearcher-ag nodejs mpich yarn octave oracle-java8-set-default android-sdk virtualbox"
+packages="awscli binutils build-essential cmake curl gcc g++ make software-properties-common texlive texlive-generic-extra texlive-latex-extra tmux p7zip p7zip-rar python-pip zsh vim autojump r-base r-base-dev gdebi-core unrar shellcheck htop trash-cli silversearcher-ag nodejs mpich yarn octave oracle-java8-set-default android-sdk virtualbox gpupg"
 
 for pkg in $packages; do
     # check if the package is already installed

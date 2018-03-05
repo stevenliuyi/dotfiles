@@ -184,3 +184,11 @@ if is_ubuntu; then
         install "CUDA and cuDNN on ubuntu" "./install/ubuntu_gpu.sh"
     fi
 fi
+
+# configurations
+if test ! "$(which gpg)"; then
+    print_info "GPG is not installed"
+else
+    print_info "configuring gpg..."
+    gpg --import $DOTFILES/conf/public_key.asc
+fi
