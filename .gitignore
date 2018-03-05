@@ -1,4 +1,4 @@
 bundle/
-*.swp
+*.sw*
 .DS_Store
 .netrwhist
