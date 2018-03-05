@@ -115,6 +115,8 @@ ln -sfv "$DOTFILES/tmux/.tmux.conf" ~
 
 mkdir -p "$HOME/.ssh"
 ln -sfv "$DOTFILES/conf/ssh.config" ~/.ssh/config
+ln -sfv "$DOTFILES/conf/id_rsa" ~/.ssh/id_rsa
+ln -sfv "$DOTFILES/conf/id_rsa.pub" ~/.ssh/id_rsa.pub
 
 source ~/.bash_profile
 
@@ -191,4 +193,11 @@ if test ! "$(which gpg)"; then
 else
     print_info "configuring gpg..."
     gpg --import $DOTFILES/conf/public_key.asc
+
+    if test ! "$(which git-crypt)"; then
+        print_info "git-crypt is not installed"
+    else
+        print_info "decrypting private files using git-crypt"
+        git-crypt unlock
+    fi
 fi
