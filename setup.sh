@@ -118,6 +118,9 @@ ln -sfv "$DOTFILES/conf/ssh.config" ~/.ssh/config
 ln -sfv "$DOTFILES/conf/id_rsa" ~/.ssh/id_rsa
 ln -sfv "$DOTFILES/conf/id_rsa.pub" ~/.ssh/id_rsa.pub
 
+# protect private key
+chmod 600 $DOTFILES/conf/id_rsa
+
 source ~/.bash_profile
 
 print_info "symlinks are created"
