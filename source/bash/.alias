@@ -7,6 +7,9 @@ alias df="df -H"
 
 # vim
 alias vi="vim"
+if test "$(which mvim)"; then
+    alias vim="mvim -v"
+fi
 
 # g++
 alias g++="g++ -std=c++14 -Wall -g -O2"
