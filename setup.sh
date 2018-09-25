@@ -204,3 +204,6 @@ else
         chmod 600 $DOTFILES/conf/id_rsa
     fi
 fi
+
+git config --global user.name "stevenliuyi"
+git config --global user.email "stevenliuyi@gmail.com"
