@@ -17,12 +17,15 @@ brew upgrade
 brew tap homebrew/science
 
 print_info "installing packages through Homebrew..."
-apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck htop trash the_silver_searcher node mpich yarn watchman gradle octave gpg git-crypt)
+apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck htop trash the_silver_searcher node mpich yarn watchman octave gpg git-crypt)
 brew install "${apps[@]}"
 
 print_info "installing apps through Homebrew Cask..."
 cask_apps=(iterm2 caffeine google-chrome mactex rstudio macvim xquartz java android-sdk virtualbox genymotion google-cloud-sdk)
 brew cask install "${cask_apps[@]}"
+
+# gradle is dependent on java
+brew install gradle 
 
 # clean up
 brew cleanup
