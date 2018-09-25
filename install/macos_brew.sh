@@ -14,8 +14,6 @@ brew update
 brew upgrade
 
 # install
-brew tap homebrew/science
-
 print_info "installing packages through Homebrew..."
 apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck htop trash the_silver_searcher node mpich yarn watchman octave gpg git-crypt)
 brew install "${apps[@]}"
@@ -29,4 +27,3 @@ brew install gradle
 
 # clean up
 brew cleanup
-brew cask cleanup
