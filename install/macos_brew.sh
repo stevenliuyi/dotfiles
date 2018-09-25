@@ -19,7 +19,7 @@ apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar
 brew install "${apps[@]}"
 
 print_info "installing apps through Homebrew Cask..."
-cask_apps=(iterm2 caffeine google-chrome mactex rstudio macvim xquartz java android-sdk virtualbox genymotion google-cloud-sdk)
+cask_apps=(iterm2 insomniax google-chrome mactex rstudio macvim xquartz java android-sdk virtualbox genymotion google-cloud-sdk)
 brew cask install "${cask_apps[@]}"
 
 # gradle is dependent on java
