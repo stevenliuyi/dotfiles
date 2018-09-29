@@ -7,7 +7,7 @@ alias df="df -H"
 
 # vim
 alias vi="vim"
-if test "$(which mvim)"; then
+if which mvim > /dev/null; then
     alias vim="mvim -v"
 fi
 

@@ -118,6 +118,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rhysd/devdocs.vim'
 
 " color schemes
 Plugin 'altercation/vim-colors-solarized'
@@ -196,6 +197,9 @@ let g:indent_guides_guide_size=1
 
 " delimitmate
 let g:delimitMate_expand_cr=1
+
+" devdocs
+nmap K <Plug>(devdocs-under-cursor)
 
 " ----------------------------------------
 " color scheme
