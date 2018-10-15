@@ -34,3 +34,8 @@ fi
 if which kinit > /dev/null; then
     alias kinit="kinit yliu27@HPCMP.HPC.MIL"
 fi
+
+# nas
+if which sshfs > /dev/null; then
+    alias nas="sshfs pi@pi.yliu.io:/nas/data ~/nas"
+fi
