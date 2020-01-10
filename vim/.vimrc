@@ -119,6 +119,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rhysd/devdocs.vim'
+Plugin 'JuliaEditorSupport/julia-vim'
 
 " color schemes
 Plugin 'altercation/vim-colors-solarized'
