@@ -18,7 +18,7 @@ print_info "installing packages through Homebrew..."
 
 brew tap jzelinskie/duckdns
 
-apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck htop trash the_silver_searcher node mpich yarn watchman octave gpg git-crypt duckdns)
+apps=(autojump awscli cmake ffmpeg git p7zip tmux tmux-mem-cpu-load wget R unrar shellcheck htop trash the_silver_searcher node mpich yarn watchman octave gpg git-crypt duckdns charmbracelet/homebrew-tap/glow)
 brew install "${apps[@]}"
 
 print_info "installing apps through Homebrew Cask..."
